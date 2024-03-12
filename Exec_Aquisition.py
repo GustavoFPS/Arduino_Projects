@@ -12,7 +12,7 @@ for element in botoes:
     tela.append(py.locateOnScreen(element))
 
 # Função de aquisição
-def aquisition(name, t):
+def aquisition(name, t, diretorio):
     '''
     Automatiza a aquisição do espectro
 
@@ -30,6 +30,8 @@ def aquisition(name, t):
     # Salva o arquivo
     if t != 0:
         py.hotkey("ctrl", "s")
+        py.write(str(diretorio))
+        py.press("enter")
         py.write('{0}_aquisition{1}'.format(name, t - 1))
         py.press("enter")
     
